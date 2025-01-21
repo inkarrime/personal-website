@@ -23,7 +23,7 @@ import astroLogo from '../assets/astro.svg';
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="./favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Jhanpiere Montes | Inkarri</title>
+		<title>Jhanpiere Montes</title>
 	</head>
 	<body>
 		<header class="header">
@@ -37,8 +37,8 @@ import astroLogo from '../assets/astro.svg';
 			<section class="wrapper banner">
 				<div class="description">
 					<h1><span class="tiny">Hey, I'm</span>
-						<span>Jhanpiere <span class="lastname">Montes</span></span><span class="light">UX/UI Designer</span></h1>
-					<p>With {new Date().getFullYear() - 2022} years of experience, designing, building and creating technology with purpose.</p>
+						<span class="fullname">Jhanpiere <span class="lastname">Montes</span></span><span class="light">UX/UI Designer</span></h1>
+					<p>With {new Date().getFullYear() - 2022} years of experience in designing, building and creating technology with purpose and impact positive.</p>
 					<a class="button link" target="_blank" href="https://linkedin.com/in/inkarrime">Let's work together</a>
 				</div>
 				<div class="assets-img">
@@ -48,7 +48,7 @@ import astroLogo from '../assets/astro.svg';
 			<section id="portfolio" class="wrapper portfolio">
 				<div class="description">
 					<h2>My Portfolio</h2>
-					<p>From projects to experiments that I do in my spare time.</p>
+					<p>From projects to personal experiments I work in my spare time.</p>
 				</div>
 				<Grid></Grid>
 			</section>
@@ -503,7 +503,7 @@ import astroLogo from '../assets/astro.svg';
 		box-shadow: none;
 	}
 
-	@media screen and (min-width: 768px) {
+	@media screen and (min-width: 820px) {
 		.wrapper {
 			margin-left: auto;
 			margin-right: auto;
@@ -523,8 +523,14 @@ import astroLogo from '../assets/astro.svg';
 				align-items: start;
 				text-align: start;
 			}
-			h1 .lastname {
-				display: block;
+			h1 {
+				.fullname {
+					display: flex;
+					gap: 0.6rem;
+				}
+				.lastname {
+					display: block;
+				}
 			}
 		}
 
