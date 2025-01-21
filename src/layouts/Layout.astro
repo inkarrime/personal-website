@@ -36,7 +36,7 @@ import astroLogo from '../assets/astro.svg';
 		<main class="main">
 			<section class="wrapper banner">
 				<div class="description">
-					<h1><span class="tiny">Hey, I'm</span><br>Jhanpiere Montes <br> <span class="light">UX/UI Designer</span></h1>
+					<h1><span class="tiny">Hey, I'm</span>Jhanpiere Montes<span class="light">UX/UI Designer</span></h1>
 					<p>With {new Date().getFullYear() - 2022} years of experience, designing, building<br>and creating technology with purpose.</p>
 					<a class="button link" target="_blank" href="https://linkedin.com/in/inkarrime">Let's work together</a>
 				</div>
@@ -251,28 +251,39 @@ import astroLogo from '../assets/astro.svg';
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
+		width: 100%;
 	}
 
 	.wrapper {
 		margin-left: auto;
 		margin-right: auto;
-		width: 100%;
-		max-width: 1200px;
-		padding-top: 9rem;
+		//width: 100%;
+		//max-width: 1200px;
+		padding-top: 4rem;
 		padding-bottom: 9rem;
 	}
 
 	.banner {
-		display: flex;
+		display: grid;
+		gap: 1rem;
+		grid-auto-rows: minmax(min-content, 20rem);
+		grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr));
+
 		padding-bottom: 6rem;
-		justify-content: space-around;
 		align-items: center;
 		.description {
 			display: flex;
+			align-items: center;
 			flex-direction: column;
 			gap: 1.5rem;
 		}
+		h1 {
+			display: flex;
+			flex-direction: column;
+			align-items: inherit;
+		}
 		p {
+			text-align: center;
 			margin-bottom: 1.5rem;
 		}
 		.tiny {
@@ -293,8 +304,8 @@ import astroLogo from '../assets/astro.svg';
 		&::before {
 			position: absolute;
 			content: "";
-			bottom: -30px;
-			left: -30px;
+			//bottom: -30px;
+			//left: -30px;
 			width: 90px;
 			height: 90px;
 			background-color: var(--accent-color);
@@ -304,8 +315,8 @@ import astroLogo from '../assets/astro.svg';
 		&::after {
 			position: absolute;
 			content: "";
-			top: -60px;
-			right: -60px;
+			//top: -60px;
+			//right: -60px;
 			width: 120px;
 			height: 120px;
 			background-color: var(--accent-color);
@@ -461,34 +472,10 @@ import astroLogo from '../assets/astro.svg';
 		}
 	}
 
-	@media screen and (max-width: 768px) {
-		#container {
-			display: flex;
-			flex-direction: column;
-		}
-
-		.banner {
-			display: block;
-			padding-top: 10%;
-		}
-
-		#links {
-			flex-wrap: wrap;
-		}
-
-		#links a.button {
-			padding: 14px 18px;
-		}
-
-		#news {
-			right: 16px;
-			left: 16px;
-			bottom: 2.5rem;
-			max-width: 100%;
-		}
-
-		h1 {
-			line-height: 1.5;
+	@media screen and (min-width: 768px) {
+		.wrapper {
+			padding-top: 9rem;
+			max-width: 1200px;
 		}
 	}
 </style>
