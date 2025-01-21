@@ -36,7 +36,8 @@ import astroLogo from '../assets/astro.svg';
 		<main class="main">
 			<section class="wrapper banner">
 				<div class="description">
-					<h1><span class="tiny">Hey, I'm</span>Jhanpiere <span class="lastname">Montes</span><span class="light">UX/UI Designer</span></h1>
+					<h1><span class="tiny">Hey, I'm</span>
+						<span>Jhanpiere <span class="lastname">Montes</span></span><span class="light">UX/UI Designer</span></h1>
 					<p>With {new Date().getFullYear() - 2022} years of experience, designing, building and creating technology with purpose.</p>
 					<a class="button link" target="_blank" href="https://linkedin.com/in/inkarrime">Let's work together</a>
 				</div>
@@ -371,7 +372,7 @@ import astroLogo from '../assets/astro.svg';
 	.portfolio {
 		display: flex;
 		flex-direction: column;
-		gap: 1.5rem;
+		gap: 2rem;
 		padding-bottom: 6rem;
 		.description{
 			text-align: center;
@@ -397,10 +398,6 @@ import astroLogo from '../assets/astro.svg';
 			align-items: center;
 			gap: 2.5rem;
 		}
-
-		.resumen {
-			width: 100%;
-		}
 		ul {
 			display: grid;
 			gap: 1rem;
@@ -421,6 +418,15 @@ import astroLogo from '../assets/astro.svg';
 			ul {
 				grid-template-columns: 1fr;
 			}
+		}
+	}
+
+	.resumen {
+		width: 100%;
+		ul{
+			gap: 2rem;
+			grid-auto-flow: dense;
+			grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr));
 		}
 	}
 
@@ -502,6 +508,8 @@ import astroLogo from '../assets/astro.svg';
 			margin-left: auto;
 			margin-right: auto;
 			padding-top: 9rem;
+			padding-right: 2rem;
+			padding-left: 2rem;
 			max-width: 1200px;
 		}
 
@@ -510,8 +518,14 @@ import astroLogo from '../assets/astro.svg';
 			height: 48px;
 		}
 
-		.banner h1 .lastname {
-			display: block;
+		.banner {
+			.description{
+				align-items: start;
+				text-align: start;
+			}
+			h1 .lastname {
+				display: block;
+			}
 		}
 
 		.about .ul {
