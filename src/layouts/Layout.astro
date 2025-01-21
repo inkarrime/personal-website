@@ -21,13 +21,13 @@ import astroLogo from '../assets/astro.svg';
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href="./favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Jhanpiere Montes | Inkarri</title>
 	</head>
 	<body>
 		<header class="header">
-			<img src={inkarriLogo.src} width="115" height="48" alt="Logo Homepage" />
+			<img class="icon logo" src={inkarriLogo.src} alt="Logo Homepage" />
 			<ul>
 				<li><a class="link" href="#portfolio">My portfolio</a></li>
 				<li><a class="link" href="#about">About me</a></li>
@@ -77,21 +77,21 @@ import astroLogo from '../assets/astro.svg';
 							<li class="skills">
 								<h3>Skills</h3>
 								<ul>
-									<li><img src={figmaLogo.src} height="32" alt="HTML Logo"></li>
-									<li><img src={htmlLogo.src} width="32" alt="HTML Logo"></li>
-									<li><img src={cssLogo.src} width="32" alt="CSS Logo"></li>
-									<li><img src={javascriptLogo.src} width="32" alt="JavaScript Logo"></li>
-									<li><img src={sassLogo.src} height="32" alt="SASS Logo"></li>
-									<li><img src={astroLogo.src} height="32" alt="Astro Logo"></li>
+									<li><img class="icon" src={figmaLogo.src} alt="HTML Logo"></li>
+									<li><img class="icon" src={htmlLogo.src} alt="HTML Logo"></li>
+									<li><img class="icon" src={cssLogo.src} alt="CSS Logo"></li>
+									<li><img class="icon" src={javascriptLogo.src} alt="JavaScript Logo"></li>
+									<li><img class="icon height" src={sassLogo.src} height="32" alt="SASS Logo"></li>
+									<li><img class="icon height" src={astroLogo.src} height="32" alt="Astro Logo"></li>
 								</ul>
 							</li>
 							<li class="tools">
 								<h3>Tools</h3>
 								<ul>
-									<li><img src={slackLogo.src} width="32" alt="Slack Logo"></li>
-									<li><img src={notionLogo.src} width="32" alt="Notion Logo"></li>
-									<li><img src={miroLogo.src} width="32" alt="Miro Logo"></li>
-									<li><img src={asanaLogo.src} width="32" alt="Asana Logo"></li>
+									<li><img class="icon" src={slackLogo.src} alt="Slack Logo"></li>
+									<li><img class="icon" src={notionLogo.src}  alt="Notion Logo"></li>
+									<li><img class="icon" src={miroLogo.src} alt="Miro Logo"></li>
+									<li><img class="icon" src={asanaLogo.src} alt="Asana Logo"></li>
 								</ul>
 							</li>
 						</span>
@@ -236,6 +236,20 @@ import astroLogo from '../assets/astro.svg';
 		line-height: 1.5rem;
 	}
 
+	img {
+		width: 100%;
+	}
+
+	.icon {
+		width: 32px;
+		&.height {
+			height: 32px;
+		}
+		&.logo {
+			width: 40px;
+		}
+	}
+
 	.light {
 		color: var(--accent-light-color);
 	}
@@ -244,7 +258,13 @@ import astroLogo from '../assets/astro.svg';
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		padding: 1.25rem;
+		padding: 1.25rem 2rem;
+		ul{
+			gap: 1rem;
+		}
+		.link {
+			padding: 0;
+		}
 	}
 
 	.main {
@@ -255,8 +275,8 @@ import astroLogo from '../assets/astro.svg';
 	}
 
 	.wrapper {
-		margin-left: auto;
-		margin-right: auto;
+		margin-left: 2rem;
+		margin-right: 2rem;
 		//width: 100%;
 		//max-width: 1200px;
 		padding-top: 4rem;
@@ -271,6 +291,8 @@ import astroLogo from '../assets/astro.svg';
 
 		padding-bottom: 6rem;
 		align-items: center;
+		justify-items: center;
+
 		.description {
 			display: flex;
 			align-items: center;
@@ -371,6 +393,7 @@ import astroLogo from '../assets/astro.svg';
 		}
 		.description {
 			display: flex;
+			flex-direction: column;
 			align-items: center;
 			gap: 2.5rem;
 		}
@@ -382,7 +405,7 @@ import astroLogo from '../assets/astro.svg';
 			display: grid;
 			gap: 1rem;
 			grid-auto-flow: dense;
-			grid-template-columns: 1fr 1fr;
+			grid-template-columns: 1fr;
 		}
 		span {
 			display: flex;
@@ -473,9 +496,18 @@ import astroLogo from '../assets/astro.svg';
 	}
 
 	@media screen and (min-width: 768px) {
+		.header .logo{
+			width: 115px;
+			height: 48px;
+		}
 		.wrapper {
+			margin-left: auto;
+			margin-right: auto;
 			padding-top: 9rem;
 			max-width: 1200px;
+		}
+		.about .ul {
+			grid-template-columns: 1fr 1fr;
 		}
 	}
 </style>
