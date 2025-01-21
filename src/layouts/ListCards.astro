@@ -1,3 +1,42 @@
 ---
-$END$
+import Card from '../components/Card.astro';
+import personalLanding from '../assets/personal_langing.png';
+import hand from '../assets/hand.svg';
 ---
+
+<li>
+    <Card
+        link="https://www.figma.com/community/file/1463373611038803206/personal-landing-page"
+        cover = {personalLanding.src}
+        title ="Personal landing page"
+        description = "Minimalist and customizable template for personal websites, designed in Figma. Available for free to the Figma community."
+    />
+</li>
+<li>
+    <article class="card next">
+        <div class="link">
+            <img src={hand.src} width="32" alt="A hand">
+            <p>Working on the next projects</p>
+        </div>
+    </article>
+</li>
+
+<style is:global>
+    li{
+        display: inline-block;
+    }
+    .card.next {
+        height: 100%;
+        .link {
+            height: inherit;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.75rem;
+            &:hover {
+                background: var(--bg-light-color);
+                transform: none;
+            }
+        }
+    }
+</style>

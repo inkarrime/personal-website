@@ -1,3 +1,21 @@
+---
+import Grid from '../components/Grid.astro';
+import inkarriLogo from '../assets/logo.svg';
+import inkarriPhoto from '../assets/image_profile.png';
+import inkarriDesk from '../assets/desk_photo.png';
+import linkedinLogo from '../assets/linkedin_logo.svg';
+import htmlLogo from '../assets/html.svg';
+import cssLogo from '../assets/css.svg';
+import sassLogo from '../assets/sass.svg';
+import javascriptLogo from '../assets/javascript.svg';
+import figmaLogo from '../assets/figma.svg';
+import notionLogo from '../assets/notion.svg';
+import miroLogo from '../assets/miro.svg';
+import asanaLogo from '../assets/asana.png';
+import slackLogo from '../assets/slack.svg';
+import astroLogo from '../assets/astro.svg';
+---
+
 <!doctype html>
 <html lang="en">
 	<head>
@@ -5,18 +23,472 @@
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>Jhanpiere Montes | Inkarri</title>
 	</head>
 	<body>
-		<slot />
+		<header class="header">
+			<img src={inkarriLogo.src} width="115" height="48" alt="Logo Homepage" />
+			<ul>
+				<li><a class="link" href="#portfolio">My portfolio</a></li>
+				<li><a class="link" href="#about">About me</a></li>
+			</ul>
+		</header>
+		<main class="main">
+			<section class="wrapper banner">
+				<div class="description">
+					<h1><span class="tiny">Hey, I'm</span><br>Jhanpiere Montes <br> <span class="light">UX/UI Designer</span></h1>
+					<p>With {new Date().getFullYear() - 2022} years of experience, designing, building<br>and creating technology with purpose.</p>
+					<a class="button link" target="_blank" href="https://linkedin.com/in/inkarrime">Let's work together</a>
+				</div>
+				<div class="assets-img">
+					<img class="image" src={inkarriPhoto.src} alt="Jhanpiere's Profile">
+				</div>
+			</section>
+			<section id="portfolio" class="wrapper portfolio">
+				<div class="description">
+					<h2>My Portfolio</h2>
+					<p>From projects to experiments that I do in my spare time.</p>
+				</div>
+				<Grid></Grid>
+			</section>
+			<section id="about" class="wrapper about">
+				<h2>About me</h2>
+				<article class="description">
+					<div class="assets-img reverse">
+						<img class="image" src={inkarriDesk.src} alt="Desk Photo">
+					</div>
+					<p>Based in Lima, Peru,<br> I'm a Computer Science student at UTEC with a passion for collaborative creation. My drive for continuous learning and enthusiasm for teamwork naturally draws me to connect with others who share the same dedication and innovative spirit.</p>
+				</article>
+				<article class="resumen">
+					<ul>
+						<span>
+							<li class="education">
+								<h3>Education</h3>
+								<p class="light">Bachelor in Computer Science</p>
+								<p>University of Engineering and Technology (UTEC)</p>
+							</li>
+							<li class="languages">
+								<h3>Languages</h3>
+								<ul>
+									<li><p>Spanish (Native)</p></li>
+									<li><p>English (B1)</p></li>
+								</ul>
+							</li>
+							<li class="skills">
+								<h3>Skills</h3>
+								<ul>
+									<li><img src={figmaLogo.src} height="32" alt="HTML Logo"></li>
+									<li><img src={htmlLogo.src} width="32" alt="HTML Logo"></li>
+									<li><img src={cssLogo.src} width="32" alt="CSS Logo"></li>
+									<li><img src={javascriptLogo.src} width="32" alt="JavaScript Logo"></li>
+									<li><img src={sassLogo.src} height="32" alt="SASS Logo"></li>
+									<li><img src={astroLogo.src} height="32" alt="Astro Logo"></li>
+								</ul>
+							</li>
+							<li class="tools">
+								<h3>Tools</h3>
+								<ul>
+									<li><img src={slackLogo.src} width="32" alt="Slack Logo"></li>
+									<li><img src={notionLogo.src} width="32" alt="Notion Logo"></li>
+									<li><img src={miroLogo.src} width="32" alt="Miro Logo"></li>
+									<li><img src={asanaLogo.src} width="32" alt="Asana Logo"></li>
+								</ul>
+							</li>
+						</span>
+						<li class="experience">
+							<h3>Experience</h3>
+							<div>
+								<ul>
+									<li>
+										<div class="role">
+											<div>
+												<p class="light">Product Designer</p>
+												<h4>IDENTI</h4>
+											</div>
+											<div>
+												<p>Remote</p>
+												<p>Jul 2024 - Jan 2025</p>
+											</div>
+										</div>
+										<p>Led blockchain digital identity wallet development for UN-WFP's immigrant benefits program.</p>
+									</li>
+									<li>
+										<div class="role">
+											<div>
+												<p class="light">Data Governance</p>
+												<h4>LUCHA</h4>
+											</div>
+											<div>
+												<p>Hybrid</p>
+												<p>Jul 2023 - Jul 2024</p>
+											</div>
+										</div>
+										<p>Led data-driven initiatives through Power BI financial dashboards and CRM implementation, resulting in 10x lead generation growth.</p>
+									</li>
+									<li>
+										<div class="role">
+											<div>
+												<p class="light">UX/UI Designer</p>
+												<h4>AGROS</h4>
+											</div>
+											<div>
+												<p>Remote</p>
+												<p>Jan 2022 - Oct 2022</p>
+											</div>
+										</div>
+										<p>Led UX research and prototyping for blockchain applications, driving user experience improvements that secured 4 international clients.</p>
+									</li>
+									<li>
+										<div class="role">
+											<div>
+												<p class="light">UX Designer</p>
+												<h4>EDTeam</h4>
+											</div>
+											<div>
+												<p>Remote</p>
+												<p>Mar 2021 - Oct 2021</p>
+											</div>
+										</div>
+										<p>I worked on improving user interaction on the platform and on the campaign web pages.</p>
+									</li>
+								</ul>
+							</div>
+						</li>
+					</ul>
+				</article>
+			</section>
+		</main>
+		<footer class="wrapper footer">
+			<section class="child">
+				<h2>Do you want to contact me?</h2>
+				<p>Let's set up a meeting, talk and see what we can create together.</p>
+				<a class="button link" target="_blank" href="https://linkedin.com/in/inkarrime">Let's work together</a>
+			</section>
+			<section class="child">
+				<a target="_blank" href="https://linkedin.com/in/inkarrime"><img src={linkedinLogo.src} alt="LinkedIn Logo"></a>
+				<p style="text-align: center" class="tiny">Creado con Astro.build <br>©{new Date().getFullYear()} - inkarri.me</p>
+			</section>
+		</footer>
 	</body>
 </html>
 
-<style>
+<style is:global>
+	@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+	:root {
+		--font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
+
+		--bg-color: #060F13;
+		--bg-light-color: #0D1E26;
+		--text-color: #F4F1D2;
+		--accent-color: #015AFF;
+		--accent-light-color: #A9C5F1;
+	}
+
+	* {
+		margin: 0;
+		padding: 0;
+	}
+
+	html {
+		scroll-behavior: smooth;
+	}
+
 	html,
 	body {
+		box-sizing: border-box;
 		margin: 0;
+		padding: 0;
 		width: 100%;
 		height: 100%;
+		background-color: var(--bg-color);
+		font-family: var(--font-family);
+		color: var(--text-color);
+	}
+
+	ul{
+		display: flex;
+		list-style: none;
+	}
+
+	h1 {
+		font-size: 2.5rem;
+		font-weight: 800;
+	}
+
+	h2 {
+		font-size: 2.25rem;
+		font-weight: 700;
+	}
+
+	h3 {
+		font-size: 2rem;
+		font-weight: 600;
+	}
+
+	h4 {
+		font-size: 1.25rem;
+		font-weight: 600;
+	}
+
+	p {
+		font-size: 1.125rem;
+		font-weight: 400;
+		line-height: 1.5rem;
+	}
+
+	.light {
+		color: var(--accent-light-color);
+	}
+
+	.header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 1.25rem;
+	}
+
+	.main {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	.wrapper {
+		margin-left: auto;
+		margin-right: auto;
+		width: 100%;
+		max-width: 1200px;
+		padding-top: 9rem;
+		padding-bottom: 9rem;
+	}
+
+	.banner {
+		display: flex;
+		padding-bottom: 6rem;
+		justify-content: space-around;
+		align-items: center;
+		.description {
+			display: flex;
+			flex-direction: column;
+			gap: 1.5rem;
+		}
+		p {
+			margin-bottom: 1.5rem;
+		}
+		.tiny {
+			font-size: 1.125rem;
+			font-weight: 500;
+			line-height: 1.8rem;
+		}
+	}
+
+	.image {
+		border-radius: 0.8rem;
+	}
+
+	.assets-img {
+		display: flex;
+		position: relative;
+		z-index: 1;
+		&::before {
+			position: absolute;
+			content: "";
+			bottom: -30px;
+			left: -30px;
+			width: 90px;
+			height: 90px;
+			background-color: var(--accent-color);
+			border-radius: 0.8rem;
+			z-index: -10;
+		}
+		&::after {
+			position: absolute;
+			content: "";
+			top: -60px;
+			right: -60px;
+			width: 120px;
+			height: 120px;
+			background-color: var(--accent-color);
+			border-radius: 0.8rem;
+			z-index: -10;
+		}
+		&.reverse{
+			&::before {
+				top: -8%;
+				left: -5%;
+				width: 90px;
+				height: 90px;
+			}
+			&::after {
+				top: 90%;
+				right: -4%;
+				width: 50px;
+				height: 50px;
+			}
+		}
+	}
+
+	a {
+		display: flex;
+		align-items: center;
+		padding: 10px 12px;
+		text-decoration: none;
+		transition: color 0.2s;
+	}
+
+	.portfolio {
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+		padding-bottom: 6rem;
+		.description{
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: 1.5rem;
+		}
+	}
+
+	.about {
+		padding-top: 2rem;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 2rem;
+		h2 {
+			margin-bottom: 1.5rem;
+		}
+		.description {
+			display: flex;
+			align-items: center;
+			gap: 2.5rem;
+		}
+
+		.resumen {
+			width: 100%;
+		}
+		ul {
+			display: grid;
+			gap: 1rem;
+			grid-auto-flow: dense;
+			grid-template-columns: 1fr 1fr;
+		}
+		span {
+			display: flex;
+			flex-direction: column;
+			gap: 2rem;
+		}
+		h3 {
+			margin-bottom: 1.5rem;
+		}
+		.education {
+		}
+		.languages {
+			ul {
+				grid-template-columns: 1fr;
+			}
+		}
+	}
+
+	.experience {
+		display: flex;
+		flex-direction: column;
+		ul {
+			display: flex;
+			flex-direction: column;
+			gap: 2.5rem;
+		}
+		li {
+			display: grid;
+			gap: 1rem;
+			.role {
+				display: flex;
+				justify-content: space-between;
+				div:nth-child(2){
+					text-align: end;
+				}
+			}
+		}
+	}
+
+	.skills,.tools {
+		ul {
+			display: flex;
+		}
+	}
+
+	.footer {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding-top: 0;
+		padding-bottom: 4rem;
+		gap: 4rem;
+		.child {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: 1rem;
+		}
+		.tiny {
+			font-size: 1rem;
+			font-weight: 300;
+			color: var(--accent-light-color);
+		}
+	}
+
+	.link {
+		color: var(--text-color);
+	}
+
+	.button {
+		color: var(--text-color);
+		background: var(--accent-color);
+		border-radius: .25rem;
+		&.link {
+			width: fit-content;
+		}
+	}
+
+	.button:hover {
+		color: rgb(230, 230, 230);
+		box-shadow: none;
+	}
+
+	@media screen and (max-height: 368px) {
+		#news {
+			display: none;
+		}
+	}
+
+	@media screen and (max-width: 768px) {
+		#container {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.banner {
+			display: block;
+			padding-top: 10%;
+		}
+
+		#links {
+			flex-wrap: wrap;
+		}
+
+		#links a.button {
+			padding: 14px 18px;
+		}
+
+		#news {
+			right: 16px;
+			left: 16px;
+			bottom: 2.5rem;
+			max-width: 100%;
+		}
+
+		h1 {
+			line-height: 1.5;
+		}
 	}
 </style>

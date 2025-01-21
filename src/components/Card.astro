@@ -1,3 +1,62 @@
 ---
-$END$
+import notionCover from '../assets/cover_notion.png';
+
+interface Props {
+    link: string,
+    cover: string,
+    title: string,
+    description: string,
+}
+
+const {cover, link, title, description} = Astro.props;
 ---
+<article class="card">
+    <a class="link" target="_blank" rel="noopener noreferrer" href={link}>
+        <div class="img-container">
+            <img class="img" src={cover} alt="Cover Notion">
+        </div>
+        <div class="content">
+            <h3>{title}</h3>
+            <p>{description}</p>
+        </div>
+    </a>
+</article>
+
+<style is:global>
+    .card {
+        .link{
+            background-color: var(--bg-light-color);
+            border-radius: 0.8rem;
+            flex-direction: column;
+            padding: 0;
+            transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+            overflow: hidden;
+        }
+        .link:hover {
+            background-color: #122833;
+            transform: scale(1.02);
+        }
+        .img-container {
+            width: 100%;
+        }
+
+        .img {
+            width: inherit;
+        }
+        .content {
+            padding: 1rem;
+        }
+        h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+        p {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+        ul{
+            gap: 0.5rem;
+        }
+    }
+</style>
