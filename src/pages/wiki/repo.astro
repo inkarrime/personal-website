@@ -1,11 +1,54 @@
 ---
 import Layout from "../../layouts/Layout.astro"
+import repoLogo from "../../assets/repo_logo.png"
 ---
 
 <Layout
     lang='es'
     titlePage='Repo'>
-    
-    <p>hola</p>
-    
+
+    <main class="main">
+        <img class="logo" src={repoLogo.src} alt="R.E.P.O.">
+        <nav>
+            <ul>
+                <li><a class="link" href="/">MONSTRUOS</a></li>
+                <li><a class="link" href="/">ESTACIÓN DE SERVICIO</a></li>
+                <li><a class="link" href="/">OBJETOS DE VALOR</a></li>
+                <li><a class="link" href="/">MAPAS</a></li>
+                <li><a class="link" href="/">NIVELES DE EXTRACCIÓN</a></li>
+            </ul>
+        </nav>
+    </main>
+
 </Layout>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@100..900&display=swap');
+
+    a {
+        color: white;
+    }
+
+    body {
+        font-family: "Smooch Sans", sans-serif;
+    }
+
+    ul {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .main {
+        display: flex;
+        flex-direction: column;
+        max-width: 1440px;
+        margin: 0 auto;
+    }
+    .logo {
+        max-width: 1024px;
+    }
+    .link {
+        font-size: 64px;
+    }
+
+</style>
