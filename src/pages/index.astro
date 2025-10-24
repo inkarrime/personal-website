@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Grid from '../components/Grid.astro';
+import ScrollingBanner from '../components/ScrollingBanner.astro';
 import inkarriLogo from '../assets/logo.svg';
 import inkarriPhoto from '../assets/image_profile.png';
 import inkarriDesk from '../assets/desk_photo.png';
@@ -20,7 +21,7 @@ import astroLogo from '../assets/astro.svg';
 <Layout
     lang = 'en'
     titlePage='Inicio'>
-	<div class='slogan'>Streams en Kick</div>
+	<ScrollingBanner text="Streams en Kick" />
     <header class="header">
         <img class="icon logo" src={inkarriLogo.src} alt="Logo Homepage" />
         <ul>
@@ -143,13 +144,6 @@ import astroLogo from '../assets/astro.svg';
 
 	.light {
 		color: var(--accent-light-color);
-	}
-
-	.slogan {
-		color: var(--bg-color);
-		background-color: #53FC18;
-		font-size: 24px;
-		font-weight: 800;
 	}
 
 	.header {
