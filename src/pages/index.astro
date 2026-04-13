@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Grid from '../components/Grid.astro';
+import ScrollingBanner from '../components/ScrollingBanner.astro';
 import inkarriLogo from '../assets/logo.svg';
 import inkarriPhoto from '../assets/image_profile.png';
 import linkedinLogo from '../assets/linkedin_logo.svg';
@@ -9,6 +10,10 @@ import linkedinLogo from '../assets/linkedin_logo.svg';
 <Layout
     lang = 'en'
     titlePage='Inicio'>
+<<<<<<< HEAD
+=======
+	<ScrollingBanner text="Streams en Kick" />
+>>>>>>> bf5b6e7b96e4c25513912c2e0771fe175f938b74
     <header class="header">
         <img class="icon logo" src={inkarriLogo.src} alt="Logo Homepage" />
         <ul>
@@ -130,13 +135,6 @@ import linkedinLogo from '../assets/linkedin_logo.svg';
 
 	.light {
 		color: var(--accent-light-color);
-	}
-
-	.slogan {
-		color: var(--bg-color);
-		background-color: #53FC18;
-		font-size: 24px;
-		font-weight: 800;
 	}
 
 	.header {
