@@ -3,8 +3,10 @@ import Layout from '../layouts/Layout.astro';
 import Grid from '../components/Grid.astro';
 import inkarriLogo from '../assets/logo.svg';
 import inkarriPhoto from '../assets/image_profile.png';
-import inkarriDesk from '../assets/desk_photo.png';
 import linkedinLogo from '../assets/linkedin_logo.svg';
+import illustratorLogo from '../assets/illustrator.svg';
+import photoshopLogo from '../assets/photoshop.svg';
+import canvaLogo from '../assets/canva-icon.svg';
 import htmlLogo from '../assets/html.svg';
 import cssLogo from '../assets/css.svg';
 import sassLogo from '../assets/sass.svg';
@@ -32,7 +34,12 @@ import astroLogo from '../assets/astro.svg';
         <section class="wrapper banner">
             <div class="description">
                 <h1><span class="tiny">Hey, I'm</span>
-                    <span class="fullname">Jhanpiere <span class="lastname">Montes</span></span><span class="light">UX/UI Designer</span></h1>
+                    <span class="fullname">Jhanpiere <span class="lastname">Montes</span></span>
+                    <div class="title-rotator">
+                        <span class="title-typed light" id="typed-title"></span>
+                        <span class="cursor">|</span>
+                    </div>
+                </h1>
                 <p>With {new Date().getFullYear() - 2022} years of experience in designing, building and creating technology with purpose and impact positive.</p>
                 <a class="button link" target="_blank" href="https://linkedin.com/in/inkarrime">Let's work together</a>
             </div>
@@ -49,19 +56,19 @@ import astroLogo from '../assets/astro.svg';
         </section>
         <section id="about" class="wrapper about">
             <h2>About me</h2>
-            <article class="description">
-                <div class="assets-img reverse">
-                    <img class="image" src={inkarriDesk.src} alt="Desk Photo">
-                </div>
-                <p>Based in Lima, Peru,<br> I'm a Computer Science student at UTEC with a passion for collaborative creation. My drive for continuous learning and enthusiasm for teamwork naturally draws me to connect with others who share the same dedication and innovative spirit.</p>
-            </article>
             <article class="resumen">
                 <ul>
                     <span>
                         <li class="education">
                             <h3>Education</h3>
-                            <p class="light">Bachelor in Computer Science</p>
-                            <p>University of Engineering and Technology (UTEC)</p>
+                            <article>
+                                <p class="light">Specialization in Graphic Design</p>
+                                <p>Platzi</p>
+                            </article>
+                            <article>
+                                <p class="light">Bachelor in Computer Science</p>
+                                <p>University of Engineering and Technology (UTEC)</p>
+                            </article>
                         </li>
                         <li class="languages">
                             <h3>Languages</h3>
@@ -73,7 +80,10 @@ import astroLogo from '../assets/astro.svg';
                         <li class="skills">
                             <h3>Skills</h3>
                             <ul>
+                                <li><img class="icon" src={illustratorLogo.src} alt="Adobe Illustrator Logo"></li>
+                                <li><img class="icon" src={photoshopLogo.src} alt="Adobe Photoshop Logo"></li>
                                 <li><img class="icon height" src={figmaLogo.src} alt="Figma Logo"></li>
+                                <li><img class="icon height" src={canvaLogo.src} alt="Canva Logo"></li>
                                 <li><img class="icon" src={htmlLogo.src} alt="HTML Logo"></li>
                                 <li><img class="icon" src={cssLogo.src} alt="CSS Logo"></li>
                                 <li><img class="icon" src={javascriptLogo.src} alt="JavaScript Logo"></li>
@@ -95,6 +105,19 @@ import astroLogo from '../assets/astro.svg';
                         <h3>Experience</h3>
                         <div>
                             <ul>
+                                <li>
+                                    <div class="role">
+                                        <div>
+                                            <p class="light">Graphic & Web Designer</p>
+                                            <h4>FREELANCER</h4>
+                                        </div>
+                                        <div>
+                                            <p>Remote</p>
+                                            <p>Jun 2025 - Actual</p>
+                                        </div>
+                                    </div>
+                                    <p>Led blockchain digital identity wallet development for UN-WFP's immigrant benefits program.</p>
+                                </li>
                                 <li>
                                     <div class="role">
                                         <div>
@@ -169,3 +192,78 @@ import astroLogo from '../assets/astro.svg';
     </footer>
 
 </Layout>
+
+<style>
+    .education > article {
+        margin-bottom: 1rem;
+    }
+
+    .title-rotator {
+        display: flex;
+        align-items: center;
+        gap: 2px;
+        height: 1.2em;
+    }
+
+    .title-typed {
+        font-size: inherit;
+        font-weight: 800;
+        color: #3b82f6;
+        white-space: nowrap;
+    }
+
+    .cursor {
+        font-size: inherit;
+        font-weight: 300;
+        color: #3b82f6;
+        animation: blink 0.7s step-end infinite;
+    }
+
+    @keyframes blink {
+        0%, 100% { opacity: 1; }
+        50%       { opacity: 0; }
+    }
+</style>
+<script>
+    const titles = ["Product Designer", "UX/UI Designer", "Graphic Designer"];
+    const el = document.getElementById("typed-title");
+
+    const TYPE_SPEED   = 70;   // ms por letra al escribir
+    const DELETE_SPEED = 40;   // ms por letra al borrar
+    const PAUSE_AFTER  = 2000; // ms de pausa leyendo el título completo
+    const PAUSE_BEFORE = 300;  // ms de pausa antes de escribir el siguiente
+
+    let titleIndex = 0;
+    let charIndex  = 0;
+    let isDeleting = false;
+
+    function tick() {
+        const current = titles[titleIndex];
+
+        if (isDeleting) {
+            charIndex--;
+            el.textContent = current.slice(0, charIndex);
+
+            if (charIndex === 0) {
+                isDeleting = false;
+                titleIndex = (titleIndex + 1) % titles.length;
+                setTimeout(tick, PAUSE_BEFORE);
+                return;
+            }
+            setTimeout(tick, DELETE_SPEED);
+
+        } else {
+            charIndex++;
+            el.textContent = current.slice(0, charIndex);
+
+            if (charIndex === current.length) {
+                isDeleting = true;
+                setTimeout(tick, PAUSE_AFTER);
+                return;
+            }
+            setTimeout(tick, TYPE_SPEED);
+        }
+    }
+
+    tick();
+</script>

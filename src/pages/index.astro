@@ -3,36 +3,23 @@ import Layout from '../layouts/Layout.astro';
 import Grid from '../components/Grid.astro';
 import inkarriLogo from '../assets/logo.svg';
 import inkarriPhoto from '../assets/image_profile.png';
-import inkarriDesk from '../assets/desk_photo.png';
 import linkedinLogo from '../assets/linkedin_logo.svg';
-import htmlLogo from '../assets/html.svg';
-import cssLogo from '../assets/css.svg';
-import sassLogo from '../assets/sass.svg';
-import javascriptLogo from '../assets/javascript.svg';
-import figmaLogo from '../assets/figma.svg';
-import notionLogo from '../assets/notion.svg';
-import miroLogo from '../assets/miro.svg';
-import asanaLogo from '../assets/asana.png';
-import slackLogo from '../assets/slack.svg';
-import astroLogo from '../assets/astro.svg';
 ---
 
 <Layout
     lang = 'en'
     titlePage='Inicio'>
-	<div class='slogan'>Streams en Kick</div>
     <header class="header">
         <img class="icon logo" src={inkarriLogo.src} alt="Logo Homepage" />
         <ul>
-            <li><a class="link" href="/wikis">Wikis</a></li>
-            <li><a class="link" href="/links">Links</a></li>
+            <li><a class="link" href="/portfolio">Portfolio</a></li>
         </ul>
     </header>
     <main class="main">
         <section class="wrapper banner">
             <div class="description">
                 <h1><span class="tiny">Hey, I'm</span>
-                    <span class="fullname">inkarri </span><span class="light">Content Creator</span></h1>
+                    <span class="fullname">inkarri </span><span class="light">Product Designer</span></h1>
                 <p>With {new Date().getFullYear() - 2022} years of experience in designing, building and creating technology with purpose and impact positive.</p>
                 <a class="button link" target="_blank" href="https://linkedin.com/in/inkarrime">Let's work together</a>
             </div>
@@ -318,7 +305,6 @@ import astroLogo from '../assets/astro.svg';
 	.resumen {
 		width: 100%;
 		ul{
-			gap: 2rem;
 			grid-auto-flow: dense;
 			grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr));
 		}

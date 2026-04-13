@@ -1,28 +1,127 @@
 ---
 import Card from '../components/Card.astro';
 import personalLanding from '../assets/personal_landing.png';
+import invasionz from '../assets/invasion-z.png';
+import latexevent from '../assets/flyer-latex.png';
+import uicomponents from '../assets/ui-components.png';
+import neurologycenter from '../assets/neurologycenter.png';
 import hand from '../assets/hand.svg';
+
+// Tool icons
+import figmaLogo from '../assets/figma.svg';
+import notionLogo from '../assets/notion.svg';
+import miroLogo from '../assets/miro.svg';
+import htmlLogo from '../assets/html.svg';
+import cssLogo from '../assets/css.svg';
+import astroLogo from '../assets/astro.svg';
+import illustratorLogo from '../assets/illustrator.svg';
+import photoshopLogo from '../assets/photoshop.svg';
 ---
+
 
 <li>
     <Card
-        link="https://www.figma.com/community/file/1463373611038803206/personal-landing-page"
-        cover = {personalLanding.src}
-        title ="Personal landing page"
-        description = "Minimalist and customizable template for personal websites, designed in Figma. Available for free to the Figma community."
+            link="hhttps://www.figma.com/community/file/1625660632449479485"
+            cover={uicomponents.src}
+            title="UI Components - AGROS"
+            description="UX research y prototipado para apps blockchain, 4 clientes internacionales."
+            tags={[
+                { label: 'Work', type: 'work' },
+                { label: 'Design', type: 'design' },
+            ]}
+            icons={[
+                { src: figmaLogo.src,  alt: 'Figma'  },
+                { src: notionLogo.src, alt: 'Notion' },
+            ]}
+    />
+</li>
+
+<li>
+    <Card
+            link="https://www.instagram.com/p/Cy2F332sBsi/?igsh=MTJvbGxrbHh6Zjg1Mw=="
+            cover={latexevent.src}
+            title="Workshop Flyer"
+            description="Wallet de identidad digital blockchain para programa de beneficios UN-WFP."
+            tags={[
+                { label: 'Work', type: 'work' },
+                { label: 'Design', type: 'design' },
+            ]}
+            icons={[
+                { src: figmaLogo.src, alt: 'Figma' },
+                { src: illustratorLogo.src,  alt: 'Illustrator'  },
+                { src: photoshopLogo.src,   alt: 'Photoshop'   },
+            ]}
     />
 </li>
 <li>
+    <Card
+            link="https://neurologoenhuaraz.com.pe/"
+            cover={neurologycenter.src}
+            title="Centro Neurológico Virgen de Yauca"
+            description="A minimalist template for personal websites, available on the Figma community."
+            tags={[
+                { label: 'Work', type: 'work' },
+                { label: 'Product', type: 'product' },
+                { label: 'Design',   type: 'design'   },
+            ]}
+            icons={[
+                { src: figmaLogo.src, alt: 'Figma' },
+                { src: htmlLogo.src, alt: "HTML"},
+                { src: photoshopLogo.src,   alt: 'Photoshop'   },
+                { src: astroLogo.src,   alt: 'Astro'   },
+            ]}
+    />
+</li>
+
+<li>
+    <Card
+            link="https://www.figma.com/community/file/1625653637301992207/minecraft-event-poster"
+            cover={invasionz.src}
+            title="Minecraft Event Posters"
+            description="Responsible for designing the visual concept for a poster for a Minecraft streamer event."
+            tags={[
+                { label: 'Work', type: 'work' },
+                { label: 'Design',   type: 'design'   },
+            ]}
+            icons={[
+                { src: figmaLogo.src, alt: 'Figma' },
+                { src: illustratorLogo.src,  alt: 'Illustrator'  },
+                { src: photoshopLogo.src,   alt: 'Photoshop'   },
+            ]}
+    />
+</li>
+
+<li>
+    <Card
+            link="https://www.figma.com/community/file/1463373611038803206"
+            cover={personalLanding.src}
+            title="Personal landing page"
+            description="A minimalist template for personal websites, available on the Figma community."
+            tags={[
+                { label: 'Project', type: 'personal' },
+                { label: 'Template', type: 'project'  },
+                { label: 'Design',   type: 'design'   },
+            ]}
+            icons={[
+                { src: figmaLogo.src, alt: 'Figma' },
+                { src: illustratorLogo.src,  alt: 'Illustrator'  },
+                { src: photoshopLogo.src,   alt: 'Photoshop'   },
+                { src: astroLogo.src,   alt: 'Astro'   },
+            ]}
+    />
+</li>
+
+<li>
     <article class="card next">
         <div class="link">
-            <img class="icon" src={hand.src} alt="A hand"/>
+            <img class="icon" src={hand.src} alt="A hand" />
             <p>Working on the next projects</p>
         </div>
     </article>
 </li>
 
 <style is:global>
-    li{
+    li {
         display: inline-block;
     }
     .card.next {
