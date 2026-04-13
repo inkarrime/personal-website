@@ -38,7 +38,7 @@ const { lang, titlePage } = Astro.props;
 	}
 
 	html {
-		scroll-behavior: smooth;
+		scroll-behavior: smooth; display: flex;
 	}
 
 	html,
@@ -46,8 +46,6 @@ const { lang, titlePage } = Astro.props;
 		box-sizing: border-box;
 		margin: 0;
 		padding: 0;
-		width: 100%;
-		height: 100%;
 		background-color: var(--bg-color);
 		font-family: var(--font-family),serif;
 		color: var(--text-color);
