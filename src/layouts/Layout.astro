@@ -1,9 +1,19 @@
 ---
 interface Props {
-	lang: string;
-	titlePage: string;
+	lang?: string;
+	titlePage?: string;
+	descriptionPage?: string;
+	ogImage?: string;
 }
-const { lang, titlePage } = Astro.props;
+const {
+	lang = 'en',
+	titlePage = 'Portfolio',
+	descriptionPage = 'UX/UI, Product & Graphic Designer based in Lima, Peru. 4+ years building digital experiences with purpose.',
+	ogImage = '/og-home.png',
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const ogImageURL = new URL(ogImage, Astro.site);
 ---
 
 <!doctype html>
@@ -11,9 +21,39 @@ const { lang, titlePage } = Astro.props;
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="../../public/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
+
 		<title>Inkarri | {titlePage}</title>
+
+		<meta name="description" content={descriptionPage} />
+		<meta name="author" content="Jhanpiere Montes" />
+		<meta name="keywords" content="UX/UI Designer, Product Designer, Graphic Designer, Lima, Peru, Figma, portfolio" />
+
+		<meta property="og:type"        content="website" />
+		<meta property="og:url"         content={canonicalURL} />
+		<meta property="og:title"       content="Jhanpiere Montes · Designer" />
+		<meta property="og:description" content={descriptionPage} />
+		<meta property="og:image"       content={ogImageURL} />
+		<meta property="og:image:width"  content="1200" />
+		<meta property="og:image:height" content="630" />
+		<meta property="og:locale"      content="en_US" />
+		<meta property="og:site_name"   content="inkarri.me" />
+
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="apple-touch-icon"          href="/apple-touch-icon.png" />
+
+		<link rel="sitemap" href="/sitemap-index.xml" />
+
+		<script type="application/ld+json" set:html={JSON.stringify({
+			"@context": "https://schema.org",
+			"@type": "Person",
+			"name": "Jhanpiere Montes",
+			"url": "https://inkarri.me/portfolio/",
+			"image": "https://inkarri.me/_astro/image_profile.DFNrXbiS.png",
+			"jobTitle": "Product Designer",
+			"worksFor": { "@type": "Organization", "name": "Freelancer" },
+			"address": { "@type": "PostalAddress", "addressLocality": "Lima", "addressCountry": "PE" },
+			"sameAs": ["https://linkedin.com/in/inkarrime"]
+		})} />
 	</head>
 	<body>
 		<slot/>
@@ -346,6 +386,9 @@ const { lang, titlePage } = Astro.props;
 	}
 
 	@media screen and (min-width: 820px) {
+		body {
+			width: 100%;
+		}
 		.wrapper {
 			margin-left: auto;
 			margin-right: auto;

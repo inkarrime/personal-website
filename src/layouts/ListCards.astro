@@ -125,8 +125,8 @@ import photoshopLogo from '../assets/photoshop.svg';
         display: inline-block;
     }
     .card.next {
-        height: 100%;
         .link {
+            padding: 8rem 2rem;
             height: inherit;
             display: flex;
             justify-content: center;
@@ -135,6 +135,14 @@ import photoshopLogo from '../assets/photoshop.svg';
             &:hover {
                 background: var(--bg-light-color);
                 transform: none;
+            }
+        }
+    }
+    @media screen and (min-width: 820px) {
+        .card.next {
+            height: 100%;
+            .link {
+                padding: 0;
             }
         }
     }
